@@ -1,0 +1,44 @@
+module ALU_1_bit
+(
+input a,
+input b,
+input CarryIn,
+input [3:0] ALUOp,
+output reg result,
+output reg CarryOut
+);
+
+wire abar;
+wire bbar;
+wire mux1out;
+wire mux2out;
+assign abar = ~a;
+assign bbar = ~b;
+assign mux2out = ALUOp[2] ? ~b : b;
+assign mux1out = ALUOp[3] ? ~a : a;
+
+always@(a, b, CarryIn, ALUOp)
+begin
+	CarryOut = 1'b0;
+	
+	
+	if (ALUOp == 4'b0000)		//and
+		result = mux1out & mux2out;
+	else if (ALUOp == 4'b0001)	//or
+		result = mux1out | mux2out;
+	else if (ALUOp == 4'b0010)	//add
+	begin
+		result = mux1out + mux2out + CarryIn;
+		CarryOut = (mux1out & CarryIn) | (mux2out & CarryIn) | (mux1out & mux2out);
+	end
+	else if (ALUOp == 4'b0110)	//subtract
+	begin
+		result = mux1out + mux2out + CarryIn;
+		CarryOut = (mux1out & CarryIn) | (mux2out & CarryIn) | (mux1out & mux2out);
+	end
+	else if (ALUOp == 4'b1100)	//NOR
+	begin
+		result = mux1out & mux2out;
+	end
+end
+endmodule
