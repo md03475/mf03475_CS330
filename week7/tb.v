@@ -1,0 +1,46 @@
+module tb
+(
+
+);
+
+	reg clk, reset, RegWrite;
+	reg [4:0] RS1, RS2, RD;
+	reg [63:0] write;
+	wire [63:0] output1, output2;
+	
+	registerFile r
+	(
+		.clk(clk),
+		.reset(reset),
+		.RegWrite(RegWrite),
+		.RS1(RS1),
+		.RS2(RS2),
+		.RD(RD),
+		.ReadData1(output1),
+		.ReadData2(output2),
+		.WriteData(write)
+	);
+	
+	initial
+	begin
+		clk = 1'b0;
+		RegWrite = 1;
+		RS1 = 5'd20;
+		RS2 = 5'd17;
+		RD = 5'd6;
+		write = 64'd69;
+		reset = 1'b1;
+
+		#50 reset = 1'b0;
+		#50 RS1 = RD;
+
+		#50 reset = 1'b1;
+		RS2 = RD;		
+
+	end
+	
+	always
+	#10 clk = ~clk;
+
+endmodule
+	
