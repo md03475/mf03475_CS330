@@ -1,0 +1,74 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\CA_Labs\week8
+vAdder
+VX0bV5Md<>7B`Aa>CnEHzB3
+r1
+31
+IYkie4=Ab^HXncVY2S=k:[3
+w1552048529
+8adder.v
+Fadder.v
+L0 1
+Z1 OE;L;6.5c;42
+Z2 o-L mtiAvm -L mtiOvm -L mtiUPF
+n@adder
+!s85 0
+!s100 zo1CNoB2b0l[GeOIYHe7n3
+vInstruction_Fetch
+VTKITUSJn8miAN[2<dB]j`1
+r1
+31
+InkzMn41SdaTKWE?LF3=P]2
+w1552049449
+8instruction_fetcher.v
+Finstruction_fetcher.v
+L0 1
+R1
+R2
+n@instruction_@fetch
+!s85 0
+!s100 6T>_<4YW1_0E>8i4f0aVE3
+vInstruction_Memory
+VJzMT^LX:XF>m0VDm;?4>I1
+r1
+31
+IWCFUOBhXOeJF?7m>0I<i`0
+w1552043953
+8instruction_memory.v
+Finstruction_memory.v
+L0 1
+R1
+R2
+n@instruction_@memory
+!s85 0
+!s100 >zX4:D2c93bhGQ`FCXlan1
+vProgram_Counter
+V0k;<=6ibN>bm_@cF5k81F0
+r1
+!s85 0
+31
+I@3I<[oK5LA`>T`i[BUzF63
+w1552043819
+8program_counter.v
+Fprogram_counter.v
+L0 1
+R1
+R2
+n@program_@counter
+!s100 20UoCl_]`Tf6_C2zP?Y5m3
+vtb
+VV@Xn<HnSRM[I5c1?BH]3a3
+r1
+31
+IJB5H27oZHji[Vf[=FHS_C0
+w1552049336
+8tb.v
+Ftb.v
+L0 1
+R1
+R2
+!s85 0
+!s100 VB<gCVgjATAPSX]U2zfVP2
